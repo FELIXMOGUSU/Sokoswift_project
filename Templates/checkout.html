@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - SokoSwift KE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">SokoSwift KE</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="checkout-container container">
+            <h2>Complete Your Order</h2>
+            <div class="checkout-layout">
+                <div class="customer-details">
+                    <h3>1. Shipping Details</h3>
+                    <form>
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="tel" placeholder="Phone Number (e.g. 0712345678)" required>
+                        <input type="text" placeholder="Delivery Address (e.g. Lavington, Nairobi)" required>
+                    </form>
+                </div>
+
+                <div class="order-summary">
+                    <h3>2. Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Iced Out Luxury Watch (x1)</span>
+                        <span>KSh 3,999</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span>KSh 150</span>
+                    </div>
+                    <hr>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span>KSh 4,149</span>
+                    </div>
+                    <div class="payment-method">
+                        <h4>Payment Method</h4>
+                        <div class="mpesa-option">
+                            <img src="images/mpesa.png" alt="M-Pesa Logo">
+                            <span>Lipa na M-Pesa</span>
+                        </div>
+                    </div>
+                    <button id="complete-order" class="btn btn-primary btn-full">Complete Order</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- This is the "STK Push" modal -->
+        <div id="stk-modal" class="modal">
+            <div class="modal-content">
+                <h3>Confirm Payment</h3>
+                <p>A payment request of <strong>KSh 4,149</strong> has been sent to your phone.</p>
+                <p>Please enter your M-Pesa PIN to complete the transaction.</p>
+                <div class="loader"></div>
+                <small>Waiting for your confirmation...</small>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
