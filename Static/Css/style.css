@@ -1,0 +1,93 @@
+
+/* static/css/style.css */
+
+/* Blue Theme Variables */
+:root {
+    --primary-blue: #007bff; /* Bright blue for accents */
+    --secondary-blue: #0056b3; /* Darker blue for hover/buttons */
+    --background-light: #f4f7f6; /* Very light gray/blue background */
+    --text-dark: #333;
+    --footer-bg: #e9ecef; /* Light gray for the footer */
+}
+
+/* Base Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container for Forms (Login/Register box) */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 20px; /* Space above the footer */
+}
+
+h1 {
+    color: var(--secondary-blue);
+    margin-bottom: 25px;
+}
+
+/* Input Fields and Buttons */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea,
+select {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--secondary-blue);
+}
+
+/* Footer Styling */
+.footer-contact {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    background-color: var(--footer-bg);
+    border-top: 2px solid var(--primary-blue);
+    text-align: center;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.footer-contact a {
+    color: var(--secondary-blue);
+    text-decoration: none;
+}
