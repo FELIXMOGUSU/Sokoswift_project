@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}SokoSwift KE - Finalize Checkout{% endblock %}
+
+{% block content %}
+    <div class="form-container" style="max-width: 600px;">
+        <h1>Finalize Your Order</h1>
+        
+        <p>Total Amount (Simulated Cart): **KSh 5299.00**</p>
+
+        <form action="{{ url_for('submit_order') }}" method="POST">
+            <h2>Delivery Information</h2>
+            <label for="delivery_address">Full Delivery Address:</label><br>
+            <textarea id="delivery_address" name="delivery_address" rows="4" cols="50" required placeholder="Enter street, building, and landmark details for M-Pesa delivery.">Nairobi, M-Pesa Location Details</textarea><br><br>
+
+            <h2>Payment Method</h2>
+            <label for="payment_method">Select Method:</label>
+            <select id="payment_method" name="payment_method" required>
+                <option value="M-Pesa">M-Pesa</option>
+                <option value="Card">Credit/Debit Card</option>
+                <option value="COD">Cash on Delivery (COD)</option>
+            </select><br><br>
+
+            <input type="submit" value="Place Order">
+        </form>
+        
+        <p><a href="{{ url_for('home') }}">Continue Shopping</a></p>
+    </div>
+{% endblock %}

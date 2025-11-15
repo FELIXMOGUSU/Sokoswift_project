@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %}SokoSwift KE - Trendy Tech & Style{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="logo">SokoSwift KE</a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Watches</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    
+                    <li>
+                        {% if session.logged_in %}
+                            <a href="{{ url_for('home') }}">Dashboard</a> | 
+                            <a href="{{ url_for('logout') }}">Logout</a>
+                        {% else %}
+                            <a href="{{ url_for('login') }}">Login</a> | 
+                            <a href="{{ url_for('register') }}">Register</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="cart-icon">
+                🛒 <span class="cart-count">{{ session.cart_count if session.cart_count else 0 }}</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-contact">
+                <p>📞 **+254 710 792 239** | 📧 <a href="mailto:felixmogusu@gmail.com">felixmogusu@gmail.com</a></p>
+            </div>
+            
+            <hr> <p>&copy; 2025 SokoSwift KE. All Rights Reserved.</p>
+            <p>
+                <a href="#">About Us</a> | 
+                <a href="#">Contact</a> | 
+                <a href="#">Shipping Policy</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

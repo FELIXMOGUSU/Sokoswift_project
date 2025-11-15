@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}SokoSwift KE - Register Account{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <h1>SokoSwift New Account Registration</h1>
+        
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        
+        <form method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" value="Register Account">
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>
+    </div>
+
+    <div class="footer-contact">
+        <p>Need Assistance? Contact Us:</p>
+        <p>📞 +254 710 792 239 | 📧 <a href="mailto:felixmogusu@gmail.com">felixmogusu@gmail.com</a></p>
+    </div>
+{% endblock %}

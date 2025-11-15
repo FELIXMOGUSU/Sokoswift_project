@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Product Details - SokoSwift KE{% endblock %}
+
+{% block content %}
+    <div class="product-details-container container">
+        <div class="product-image-gallery">
+            <img src="images/watch1.jpg" alt="Main product image" class="main-image">
+        </div>
+        <div class="product-info">
+            <h1>Iced Out Luxury Watch</h1>
+            <p class="price">KSh 3,999</p>
+            <div class="short-description">
+                <ul>
+                    <li>✓ Premium Stainless Steel</li>
+                    <li>✓ Water Resistant Design</li>
+                    <li>✓ 1-Year Manufacturer Warranty</li>
+                    <li>✓ Perfect for any occasion</li>
+                </ul>
+            </div>
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+            </div>
+            <a href="{{ url_for('checkout') }}" class="btn btn-primary">Buy Now with M-Pesa</a>
+            <a href="#" class="btn btn-secondary">Add to Cart</a>
+        </div>
+    </div>
+{% endblock %}
